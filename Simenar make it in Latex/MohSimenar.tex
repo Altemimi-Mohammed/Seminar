@@ -1,0 +1,706 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference, compsoc]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Assignment 1 - The Simenar}
+
+
+% author names and affiliations
+% use a multiple column layout for up to two different
+% affiliations
+
+\author{\IEEEauthorblockN{Mohammed Altemimi (Microsoft Member)}
+\IEEEauthorblockA{dept. FTSM\\
+Mohammed Alaa Hussein Altemimi\\
+UKM University , Malaysia \\
+goodprogrammer2005@yahoo.com}
+\and
+\IEEEauthorblockN{}
+\IEEEauthorblockA{\\ }}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{Overview}
+%\boldmath
+	Securing Network Traffic by Using IPSec and Certificates
+- Implementing IPSec 
+	What Is IPSec? (Define IPSec, encryption, and decryption)
+How IPSec Secures Traffic (Define security association and Internet Key Exchange)
+What Is an IPSec Security Policy? 
+  	(Explain that an IPSec Security policy consists of a set of rules that determine how IPSec works)
+How IPSec Policies Work Together
+Guidelines for Balancing Security and Performance 
+	(Discuss how to apply the guidelines to properly balance the need for security without  affecting 
+		performance )
+How to Assign or Unassigned an IPSec Policy on a Computer 
+Demonstrate how to add an IPSecurity Management Console and then assign or unassign an IPSec policy for a local computer policy.
+Demonstrate how to assign and unassign an IPSec policy for an Active Directory-based group policy.
+
+- Implementing IPSec with Certificates
+What Is a Certificate?
+Common Uses of Certificates
+Why Use Certificates with IPSec to Secure Network Traffic?
+Multimedia: Certificate Enrollment
+How to Configure IPSec to Use a Certificate
+
+- Monitoring IPSec
+IP Security Monitor 
+Guidelines for Monitoring IPSec Policies
+How to Stop and Start the IPSec Services
+How to View IPSec Policy Details
+
+
+\end{Overview}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+% no \IEEEPARstart
+You can secure Network Traffic by us e IPSec So that unauthorized user’s or application can't access private data on TCP/IP protocol.
+
+A significant amount of data that passes over a local area network (LAN) is in a form that could be easily captured and interpreted by a protocol analyzer connected to the network. If any data is captured, an attacker could potentially modify and retransmit the modified data over the network. To secure the data that is transmitted over the network from these types of attacks, you can encrypt network data by using IPSec. IPSec allows you to  define the scope of your encryption. For example, you can encrypt all network communication for specific clients or for all clients in a domain.
+
+	[IPSec]
+IPSec is a suite of protocols that allows secure, encrypted communication between two computers over an unsecured network.
+IPSec has two goals: to protect IP packets, and to provide a defense against network attacks.
+Configuring IPSec on sending and receiving computers enables the two computers to send secured data to each other.
+IPSec secures network traffic by using encryption, decryption, and data signing.
+You use IPSec policies to configure IPSec. A configuration policy defines the type of traffic that IPSec examines, how that traffic is secured and encrypted, and how IPSec peers are authenticated.
+There are default IPSec policies that you can use, or you can create a custom policy.
+You can configure only one IPSec policy at a time for a single computer.
+
+	[Definition]
+‘IPSec ‘ is an industry-defined set of standards that verifies, authenticates, and encrypts data at the IP packet level.’ IPSec is used to provide data security for network transmissions.
+‘Encryption’ is the process of encoding a message or data through a mathematical key in a manner that hides its substance from anyone who does not possess the mathematical key.
+‘Decryption’  is the reverse process of encryption. Decrypting data involves applying the appropriate mathematical key to decode the message or data so that it is restored to its original content.
+
+	[Purpose of IPSec]
+IPSec is used to provide data security for network transmissions. The administrator sets a series of rules called an IPSec policy. These rules contain filters that specify what types of traffic require encryption, digital signing, or both. Then, every packet that the computer sends is assessed to find whether it matches the conditions of the policy. If it matches the policy conditions, it can be either encrypted or signed according to the policy. This process is transparent to the user and applications that initiate the data  transmission. 
+Because IPSec is contained inside a standard IP packet, it can travel through a network without requiring special configuration on the devices in between the two hosts. IPSec cannot encrypt some types of traffic, such as broadcasts, multicasts, and Kerberos protocol packets.
+
+	[Benefits of IPSec]
+The major benefit of IPSec is that it provides totally transparent encryption for all protocols from Open Systems Interconnection (OSI) model layer 3 (network layer) and higher.
+		IPSec provides:
+    - Mutual authentication before and during communications. 
+	        IPSec forces both parties to identify themselves during the communication process.
+   - Confidentiality through encryption of IP traffic and digital authentication of packets.
+	        IPSec has two modes: Encapsulating Security Payload (ESP), which provides encryption by using one of a few different algorithms, and Authentication Header (AH), which signs the traffic but does not encrypt it.
+    - Integrity of IP traffic by rejecting modified traffic .
+	        Both ESP and AH verify the integrity of all IP traffic. If a packet has been modified, the digital signature will not match, and the packet will be discarded. ESP encrypts the source and destination addresses as part of the payload.
+    - Prevention against replay attacks.
+	        Both ESP and AH use sequence numbers, so that any packets that are captured for later replay would be using numbers out of sequence. Using sequenced numbers ensures that an attacker cannot reuse or replay captured data to establish a session or gain information illegally. Using sequenced numbers also protects against attempts to intercept a message and then use the identical message to illegally gain access to resources, possibly months later.
+
+	[Example]
+Because the capturing of confidential information can compromise an organization’s success, an organization needs to have reliable network security for sensitive information, such as product data, financial reports, and marketing plans. You can use IPSec to ensure secure and private communications within a network, intranet, or extranet including workstation-to-server and server-to server communications.
+
+	[How IPSec works]
+IPSec configuration is set through either a local policy or a group policy in the Active Directory® directory service:
+	1. IPSec policies are delivered to all targeted computers. The policy tells the IPSec driver how to behave and defines the security associations that can be established. Security associations govern what encryption protocols are used for what types of traffic and what authentication methods are negotiated.
+	Define: Internet Key Exchange (IKE) is a protocol that establishes the security association and shared keys necessary for two parties to communicate by using IPSec.
+	2. The security association is negotiated. The Internet Key Exchange (IKE) module negotiates the security association. IKE is a combination of two protocols: the Internet Security Association and Key Management Protocol (ISAKMP) and the Oakley Key Determination Protocol. If one client requires certificates for authentication and the other client requires the Kerberos protocol, IKE will not be able to establish a security  association between these two computers. If you look at the packets in Network Monitor, you will see ISAKMP packets, but you will not see any subsequent AH or ESP packets. 	
+	3. IP packets are encrypted. After the security association is established, the IPSec driver monitors all IP traffic, compares traffic to the defined filters, and if directed to, either encrypts or signs the traffic.
+
+An IPSec Security policy consists of one or more rules that determine IPSec behavior.
+You implement IPSec by setting a policy. Each policy can contain several rules, but you can only assign a single policy at any one time on any computer. You must combine all desired rules into a single policy.
+ A filter. The filter tells the policy what type of traffic to apply the filter action to. For example, you can have a filter that identifies only Hypertext Transfer Protocol (HTTP) traffic or File Transfer Protocol (FTP) traffic.
+
+A filter action. The filter action tells the policy what to do if the traffic matches the filter. For example, you can tell IPSec to block all FTP traffic but require encryption for all HTTP traffic. The filter action can also specify which hashing and encryption algorithms the policy should use.
+An authentication method. There are three possible authentication methods: certificates, the Kerberos protocol, and a preshared key. Each rule can specify multiple authentication methods.
+
+
+Kerberos authentication:- 
+     is the default setting for all three default policies. Kerberos protocol works for computers in the same Active Directory forest, but if a computer is not a member of the forest, the computers cannot negotiate authentication. Also, if computer B is modified to use only certificates for authentication for all IP traffic, no security association will be established. It is possible to change computer B to require either the Kerberos protocol or certificates. As long as one authentication method matches, authentication can occur.
+     
+	[Mode ]
+Encapsulation security payload.
+Authentication Header.
+CPS: cryptographic protocol services, located at local machine and responsible for generating public key and private key at client side.
+The policy agent is IPSec services located at client under services.
+
+	[Implementing IPSec with Certificates]
+IPSec relies on mutual authentication to provide secure communications. Because IPSec is an industry standard, this authentication may need to occur between systems that do not share a centralized Kerberos protocol authentication infrastructure. X.509 certificates provide another means of authentication for IPSec that is standards-based and can be used if a trusted Public Key Infrastructure (PKI) is in place. This lesson describes how you can use public key certificates for authentication to provide trust and secure communication in your network.
+
+
+What Is a Certificate:- 
+Certificates are an electronic credential that authenticates a user on the Internet and intranets.
+
+Definition:-
+An X.509 certificate, also sometimes called a digital certificate, is an electronic credential that is commonly used for authentication and secure exchange of information on open networks, such as the Internet, extranets, and intranets.
+A certificate securely binds a public key to the entity that holds the corresponding private key. For example, you can encrypt data for a recipient with their public key, trusting that only the recipient has the private key that is required to decrypt the data.
+A certificate issuer, called a certification authority (CA), digitally signs certificates. The certificates can be issued for a user, a computer, or a service, such as IPSec.
+
+	[Benefit of certificates]
+One of the main benefits of certificates is that hosts no longer have to maintain a set of passwords for individual subjects who need to be authenticated as a prerequisite to access. Instead, the host merely establishes trust in a CA that issues certificates.
+
+
+	[Purpose of a certification authority]
+A CA is responsible for authenticating and validating the keys for encryption, decryption, and authentication. After a CA verifies the identity of a key holder, the CA distributes the public keys by issuing X.509 certificates. X.509 certificates contain the public key and a set of attributes. A CA can issue certificates for specific functions, such as secure e-mail or IPSec, in addition to general purpose certificates.
+
+	[Certificate contents]
+A certificate contains the following information:
+The public cryptographic key from the certificate subject’s public and private key pair.
+Information about the subject that requested the certificate.
+The user or computer’s X.500 distinguished name.
+The e-mail address of the certificate’s owner.
+Details about the CA.
+Expiration dates.
+A hash of the certificate contents to ensure authenticity (digital signature).
+
+	[Uses of certificates]
+Many organizations install their own CAs and issue certificates to internal devices, services, and employees to create a more secure computing environment. Therefore, an employee of an organization may have several certificates issued by more than one CA.
+
+	[Purpose of certificates]
+Using certificates from a trusted CA as the method of authentication between two IPSec hosts allows an enterprise to interoperate with other organizations that trust the same CA. You can also use certificates to  enable Windows Routing and Remote Access service to securely communicate over the Internet with a third-party router that supports IPSec. However, because certificates are more complex than either preshared keys or the Kerberos protocol, they require more administrative planning. Certificates are just one component of a PKI solution. Although PKI requires planning and management resources, it crosses enterprise borders to allow the bond of identity and trust to be established between organizations.
+
+	[Kerberos protocol and preshared keys]
+The other two methods for authentication between two IPSec hosts include:
+Kerberos protocol. For traffic between computers in the same forest, using the default Kerberos protocol authentication is the simplest authentication for IPSec and does not require any configuration. The Kerberos protocol is a component of Active Directory, so it is part of an enterprise domain structure. However, for clients that do not support the Kerberos protocol or for clients that are not part of the Active Directory structure, using some another means of authentication is required, such as either a preshared key or X.509 certificate.
+
+Preshared keys. A preshared key is a large random text string that is used as a password between two IPSec hosts. Preshared keys are not considered as secure as the Kerberos protocol or certificates because they are stored in clear text in the IPSec policy. An attacker could gain administrative access to the policy and then obtain the preshared key. Preshared keys also do not scale well to multiple computer configurations.
+
+	
+
+
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+\hfill 
+ 
+\hfill September 1, 2009
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+
+\section{}
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+
+
+	The Researcher Mohammed Altemimi would like to thank Dr. Mohd Zamri and all My classmate to listen ...
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+\bibitem{IEEEhowto:kopka}
+Microsoft, \emph{A Guide to Network Infrastrucure \LaTeX}, 3rd~ed.\hskip , \emph, \relax.
+
+\end{thebibliography}
+
+
+
+% that's all folks
+\end{document}
+
+
